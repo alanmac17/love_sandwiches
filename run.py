@@ -151,3 +151,14 @@ def main():
 print("Welcome to Love Sandwiches Data Automation")
 main()
 
+def get_stock_values(data):
+    
+    headings = SHEET.worksheet("stock").row_values(1)
+    
+    d = dict(zip(headings, data))
+    
+    return d
+    
+stock_values = get_stock_values(stock_data)
+print(stock_values)
+    
